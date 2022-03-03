@@ -36,9 +36,9 @@ const updateTable = async (req, res) => {
         params:{id:tableId}
     } = req
 
-    if(company === '' || position === ''){
+  /*   if(company === '' || position === ''){
         throw new BadRequestError('Company and position fields can not be empty')
-    }
+    } */
 
     const table = await Table.findByIdAndUpdate(
         {_id:tableId, creadedBy:userId}, 
