@@ -36,6 +36,30 @@ const updateTable = async (req, res) => {
         params:{id:tableId}
     } = req
 
+    const processos = JSON.parse(req.body.processos);
+
+    processos.forEach(processo => {
+        Table.updateOne({_id: req.body.id}, {
+            $push: {
+                'processes':{
+                    index: index,
+                    code: code,
+                    distance: distance,
+                    factor: factor,
+                    type: type
+                }
+            }
+        },
+        (error) = {
+            if(error){
+                error = error
+            }
+        }
+        )
+    });
+
+    // continue from here \/
+
   /*   if(company === '' || position === ''){
         throw new BadRequestError('Company and position fields can not be empty')
     } */
@@ -44,7 +68,7 @@ const updateTable = async (req, res) => {
         {_id:tableId, creadedBy:userId}, 
         req.body, 
         {new:true, runValidators:true}
-        )
+    )
 
     if(!table){
         throw NotFoundError(`No table with id ${tableId}`)
