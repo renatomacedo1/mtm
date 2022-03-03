@@ -1,3 +1,12 @@
+#### WARNING
+This project still doesn't have any functionality.
+Work in progress.
+
+#### What will this be?
+MTM UAS process manager.
+User will have to register and have an active account to access the app.
+
+
 #### Setup
 
 ```bash
