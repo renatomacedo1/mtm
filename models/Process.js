@@ -21,10 +21,7 @@ const ProcessSchema = new mongoose.Schema(
       maxlength: 100
     },
     aux: {
-      type: String,
-      required: [true, 'Please provide a situar'],
-      minlength: 1,
-      maxlength: 50
+      type: String
     },
     tmtLessThan20: {
       type: Number,
